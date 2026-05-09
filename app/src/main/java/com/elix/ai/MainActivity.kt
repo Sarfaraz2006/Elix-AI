@@ -1,13 +1,17 @@
 package com.elix.ai
 
+import android.app.Activity
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        title = "Elix AI"
+        val text = TextView(this)
+        text.text = "Elix AI Working"
+
+        setContentView(text)
     }
 }
