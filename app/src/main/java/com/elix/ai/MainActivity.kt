@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Mic
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material3.*
@@ -22,6 +21,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.elix.ai.sidebar.SidebarContent
 import com.elix.ai.ui.BrandLogo
 
 class MainActivity : ComponentActivity() {
@@ -89,30 +89,7 @@ fun ElixApp() {
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-
-                    verticalAlignment = Alignment.CenterVertically,
-
-                    horizontalArrangement =
-                    Arrangement.SpaceBetween
-                ) {
-
-                    BrandLogo()
-
-                    IconButton(
-                        onClick = {
-                            showSidebar = !showSidebar
-                        }
-                    ) {
-
-                        Icon(
-                            imageVector = Icons.Default.Menu,
-                            contentDescription = null,
-                            tint = Color.White
-                        )
-                    }
-                }
+                BrandLogo()
 
                 Spacer(modifier = Modifier.height(18.dp))
 
@@ -253,53 +230,7 @@ fun ElixApp() {
 
         if (showSidebar) {
 
-            Box(
-                modifier = Modifier
-                    .fillMaxHeight()
-                    .width(260.dp)
-                    .background(Color(0xFF111827))
-                    .padding(20.dp)
-            ) {
-
-                Column {
-
-                    Spacer(modifier = Modifier.height(40.dp))
-
-                    BrandLogo()
-
-                    Spacer(modifier = Modifier.height(30.dp))
-
-                    SidebarItem("History")
-                    SidebarItem("Image AI")
-                    SidebarItem("Automation")
-                    SidebarItem("Voice Mode")
-                    SidebarItem("Settings")
-                }
-            }
+            SidebarContent()
         }
-    }
-}
-
-@Composable
-fun SidebarItem(
-    title: String
-) {
-
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 8.dp),
-
-        colors = CardDefaults.cardColors(
-            containerColor = Color(0xFF1A1F2E)
-        )
-    ) {
-
-        Text(
-            text = title,
-            color = Color.White,
-            fontSize = 18.sp,
-            modifier = Modifier.padding(16.dp)
-        )
     }
 }
