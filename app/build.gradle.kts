@@ -47,25 +47,11 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
 
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
-    implementation("androidx.compose.material:material-icons-extended")
-}
 
-dependencies {
     implementation("androidx.compose.material:material-icons-extended")
-}
-
-dependencies {
 
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
 
-    kapt("androidx.room:room-compiler:2.6.1")
-}
-
-plugins {
-
-dependencies {
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
 }
